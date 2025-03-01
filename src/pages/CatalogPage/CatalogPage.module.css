@@ -1,0 +1,58 @@
+/* src/pages/CatalogPage/CatalogView.module.css */
+.catalogContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.carsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 276px);
+  justify-content: center;
+  gap: 29px;
+  margin-bottom: 20px;
+}
+
+.noCarsMessage {
+  text-align: center;
+  font-size: 18px;
+  color: #8a8a89;
+  margin-top: 50px;
+}
+
+.errorMessage {
+  text-align: center;
+  color: #d32f2f;
+  font-size: 18px;
+  margin: 20px 0;
+}
+
+.loaderWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  margin: 20px 0;
+}
+
+/* Медіа-запити для адаптивності */
+@media (max-width: 1200px) {
+  .carsGrid {
+    grid-template-columns: repeat(3, 276px);
+  }
+}
+
+@media (max-width: 900px) {
+  .carsGrid {
+    grid-template-columns: repeat(2, 276px);
+  }
+}
+
+@media (max-width: 630px) {
+  .carsGrid {
+    grid-template-columns: repeat(1, 276px);
+  }
+}

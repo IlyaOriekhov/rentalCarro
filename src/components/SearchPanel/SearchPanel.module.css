@@ -1,0 +1,91 @@
+.filterContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-bottom: 50px;
+  justify-content: center;
+}
+
+.filterGroup {
+  position: relative;
+}
+
+.label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #8a8a89;
+}
+
+.input {
+  padding: 14px 18px;
+  background-color: #f7f7fb;
+  border: none;
+  font-size: 16px;
+  color: #121417;
+  width: 160px;
+  border-radius: 14px;
+}
+
+.input::placeholder {
+  color: #8a8a89;
+}
+
+.input:hover {
+  background-color: #f1f1fa;
+}
+
+.mileageContainer {
+  display: flex;
+  gap: 0; /* Щоб не було проміжку між полями */
+}
+
+.leftInput {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: 1px solid rgba(138, 138, 137, 0.2);
+}
+
+.rightInput {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.primaryButton {
+  padding: 14px 44px;
+  background-color: #3470ff;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  height: fit-content;
+  align-self: flex-end;
+}
+
+.primaryButton:hover {
+  background-color: #0b44cd;
+}
+
+/* Адаптивна верстка */
+@media (max-width: 768px) {
+  .filterContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mileageContainer {
+    width: 100%;
+  }
+
+  .input {
+    width: 50%;
+  }
+
+  .primaryButton {
+    width: 100%;
+    align-self: center;
+  }
+}

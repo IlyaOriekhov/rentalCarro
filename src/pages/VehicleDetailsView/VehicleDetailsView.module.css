@@ -1,0 +1,53 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.contentWrapper {
+  display: flex;
+  gap: 72px;
+}
+
+/* Ліва колонка з зображенням і формою */
+.leftColumn {
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Права колонка з інформацією */
+.rightColumn {
+  flex: 1;
+  flex-direction: column;
+}
+
+.imageContainer {
+  margin-bottom: 24px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.carImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.bookingFormContainer {
+  width: 100%;
+}
+
+/* Адаптивна верстка */
+@media (max-width: 992px) {
+  .contentWrapper {
+    flex-direction: column;
+  }
+
+  .leftColumn,
+  .rightColumn {
+    max-width: 100%;
+  }
+}

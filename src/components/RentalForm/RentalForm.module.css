@@ -1,0 +1,256 @@
+.bookingFormContainer {
+  background-color: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.formTitle {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #121417;
+}
+
+.formSubtitle {
+  font-size: 14px;
+  color: #8a8a89;
+  margin-bottom: 24px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.formInput,
+.formTextarea {
+  padding: 12px 16px;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  font-size: 14px;
+  width: 100%;
+  background-color: #f8f8f8;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.formInput:focus,
+.formTextarea:focus {
+  border-color: #3470ff;
+  outline: none;
+}
+
+.formInput::placeholder,
+.formTextarea::placeholder {
+  color: #8a8a89;
+}
+
+.formTextarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.datePickerContainer {
+  position: relative;
+}
+
+.datePickerWrapper {
+  width: 100%;
+}
+
+.calendarIcon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 1;
+}
+
+.calendarIcon svg {
+  fill: #121417;
+}
+
+.submitButton {
+  margin-top: 8px;
+  padding: 12px 24px;
+  background-color: #3470ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  width: 156px;
+  height: 44px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.submitButton:hover {
+  background-color: #0b44cd;
+}
+
+.submitButton:disabled {
+  background-color: #b0c0e0;
+  cursor: not-allowed;
+}
+
+/* Стилі для календаря */
+.customCalendar {
+  width: 100%;
+  border: none !important;
+  font-family: "Manrope", sans-serif;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  border-radius: 12px !important;
+  padding: 16px !important;
+}
+
+.calendarHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.monthSelector {
+  font-weight: 600;
+  font-size: 18px;
+  color: #121417;
+}
+
+.navButton {
+  background: none;
+  border: none;
+  padding: 6px;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.navButton svg {
+  fill: #3470ff;
+}
+
+.navButton:hover {
+  background-color: #f5f5f5;
+}
+
+.navButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Кастомізація календаря react-datepicker */
+:global .react-datepicker {
+  border: none !important;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  font-family: "Manrope", sans-serif;
+}
+
+:global .react-datepicker__header {
+  background-color: white !important;
+  border-bottom: none !important;
+  padding-top: 16px !important;
+}
+
+:global .react-datepicker__month-container {
+  width: 100%;
+}
+
+:global .react-datepicker__day-names {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px !important;
+  padding: 0 8px;
+}
+
+:global .react-datepicker__day-name {
+  color: #8a8a89 !important;
+  font-weight: 500;
+  width: 36px !important;
+  margin: 2px !important;
+  font-size: 13px !important;
+}
+
+:global .react-datepicker__month {
+  margin: 0 !important;
+  padding: 0 8px;
+}
+
+:global .react-datepicker__week {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+:global .react-datepicker__day {
+  width: 36px !important;
+  height: 36px !important;
+  line-height: 36px !important;
+  margin: 2px !important;
+  border-radius: 50% !important;
+  font-size: 14px !important;
+  color: #121417 !important;
+}
+
+:global .react-datepicker__day:hover {
+  background-color: #f0f0f0 !important;
+}
+
+:global .react-datepicker__day--selected {
+  background-color: #3470ff !important;
+  color: white !important;
+  font-weight: 500 !important;
+}
+
+:global .react-datepicker__day--outside-month {
+  color: #cccccc !important;
+}
+
+:global .react-datepicker__day--today {
+  font-weight: 600 !important;
+  color: #3470ff !important;
+}
+
+:global .react-datepicker__day--selected.react-datepicker__day--today {
+  color: white !important;
+}
+
+:global .react-datepicker__triangle {
+  display: none !important;
+}
+
+:global .react-datepicker-popper {
+  z-index: 1000 !important;
+}
+
+@media (max-width: 576px) {
+  :global .react-datepicker-popper {
+    width: 90vw !important;
+    transform: translate(5vw, 8px) !important;
+  }
+
+  :global .react-datepicker__month-container {
+    width: 100% !important;
+  }
+
+  :global .react-datepicker {
+    width: 100% !important;
+  }
+}

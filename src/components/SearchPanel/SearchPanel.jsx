@@ -27,20 +27,17 @@ const SearchPanel = () => {
     dispatch(loadBrands());
   }, [dispatch]);
 
-  // Опцій для селекторів
   const priceOptions = Array.from({ length: 11 }, (_, i) => ({
     value: (i + 3) * 10,
     label: String((i + 3) * 10),
   }));
 
-  // Перетворюємо масив брендів у формат для Dropdown
   const brandOptions = availableBrands.map((brand) => ({
     value: brand,
     label: brand,
   }));
 
   const handleSearch = () => {
-    // Використовуємо утиліту для побудови параметрів пошуку
     const params = buildSearchParams({
       page: 1,
       limit: 8,
@@ -54,14 +51,12 @@ const SearchPanel = () => {
     dispatch(getVehiclesList(params));
   };
 
-  // Функція форматування відображення для поля ціни
   const formatPriceDisplay = (value) => {
     return value ? `To $${value}` : "Choose a price";
   };
 
   return (
     <div className={styles.filterContainer}>
-      {/* Селект брендів */}
       <div className={styles.filterGroup}>
         <label className={styles.label}>Car brand</label>
         <Dropdown
@@ -72,7 +67,6 @@ const SearchPanel = () => {
         />
       </div>
 
-      {/* Селект цін */}
       <div className={styles.filterGroup}>
         <label className={styles.label}>Price / 1 hour</label>
         <Dropdown
@@ -84,7 +78,6 @@ const SearchPanel = () => {
         />
       </div>
 
-      {/* Поля для введення пробігу */}
       <div className={styles.filterGroup}>
         <label className={styles.label}>Car mileage / km</label>
         <div className={styles.mileageContainer}>
@@ -107,7 +100,6 @@ const SearchPanel = () => {
         </div>
       </div>
 
-      {/* Кнопка пошуку */}
       <button className={styles.primaryButton} onClick={handleSearch}>
         Search
       </button>

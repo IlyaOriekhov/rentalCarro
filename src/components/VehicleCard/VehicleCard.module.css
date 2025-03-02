@@ -1,4 +1,3 @@
-/* src/components/VehicleCard.module.css */
 .cardContainer {
   width: 276px;
   height: 426px;
@@ -76,7 +75,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 75%; /* Збільшив максимальну ширину */
+  max-width: 75%;
 }
 
 .accentText {
@@ -93,24 +92,24 @@
 .tagList {
   display: flex;
   flex-wrap: wrap;
-  gap: 2px 4px; /* Зменшив відступи між тегами */
+  gap: 2px 4px;
   margin-bottom: 28px;
   overflow: hidden;
-  min-height: 36px; /* Фіксована мінімальна висота для списку тегів */
+  min-height: 36px;
 }
 
 .tag {
-  font-size: 11px; /* Зменшив розмір шрифту */
+  font-size: 11px;
   color: rgba(18, 20, 23, 0.5);
   position: relative;
-  padding-right: 4px; /* Зменшив правий відступ */
-  margin-right: 4px; /* Зменшив правий маржин */
+  padding-right: 4px;
+  margin-right: 4px;
 }
 
 .tag:not(:last-child)::after {
   content: "";
   position: absolute;
-  right: -2px; /* Підкоригував положення розділювача */
+  right: -2px;
   top: 50%;
   transform: translateY(-50%);
   height: 16px;

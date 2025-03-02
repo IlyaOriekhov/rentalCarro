@@ -1,7 +1,5 @@
-// src/redux/wishlistSlice.js
 import { createSlice } from "@reduxjs/toolkit";
 
-// Отримуємо збережені улюблені з localStorage
 const getSavedWishlist = () => {
   try {
     const savedItems = localStorage.getItem("wishlist");
@@ -24,14 +22,11 @@ const wishlistSlice = createSlice({
       );
 
       if (existingIndex !== -1) {
-        // Видаляємо з улюблених
         state.wishlistItems.splice(existingIndex, 1);
       } else {
-        // Додаємо до улюблених
         state.wishlistItems.push(payload);
       }
 
-      // Зберігаємо в localStorage
       try {
         localStorage.setItem("wishlist", JSON.stringify(state.wishlistItems));
       } catch (error) {

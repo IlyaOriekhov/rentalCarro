@@ -1,4 +1,3 @@
-// src/App.jsx
 import { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
@@ -6,7 +5,6 @@ import "react-toastify/dist/ReactToastify.css";
 import NavigationBar from "./components/NavigationBar/NavigationBar";
 import SpinnerLoader from "./components/SpinnerLoader/SpinnerLoader";
 
-// Lazy loading для сторінок
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const CatalogPage = lazy(() => import("./pages/CatalogPage/CatalogPage"));
 const VehicleDetailsView = lazy(() =>

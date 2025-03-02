@@ -12,7 +12,6 @@ const VehicleCard = ({ vehicleData }) => {
   const wishlistItems = useSelector((state) => state.wishlist.wishlistItems);
   const isInWishlist = wishlistItems.some((item) => item.id === vehicleData.id);
 
-  // Парсимо адресу на частини використовуючи утиліту
   const { city, country } = parseAddress(vehicleData.address);
 
   const handleWishlistToggle = (event) => {
@@ -21,7 +20,6 @@ const VehicleCard = ({ vehicleData }) => {
     dispatch(toggleWishlistItem(vehicleData));
   };
 
-  // Оптимізуємо теги для відображення
   const tags = [
     city,
     country,
@@ -29,9 +27,9 @@ const VehicleCard = ({ vehicleData }) => {
     vehicleData.type,
     vehicleData.id % 2 === 0
       ? vehicleData.accessories[0]
-      : vehicleData.functionalities[0], // Додаємо аксесуари чи функціонал
+      : vehicleData.functionalities[0],
     `${formatDistance(vehicleData.mileage)} km`,
-  ].filter(Boolean); // Видаляємо порожні значення
+  ].filter(Boolean);
 
   return (
     <article className={styles.cardContainer}>

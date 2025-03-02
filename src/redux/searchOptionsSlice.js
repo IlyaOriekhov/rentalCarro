@@ -1,4 +1,3 @@
-// src/redux/searchOptionsSlice.js
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { fetchBrandsList } from "../services/api";
 

@@ -11,8 +11,15 @@ import styles from "./CatalogPage.module.css";
 const CatalogView = () => {
   const dispatch = useDispatch();
 
-  const { vehiclesList, isLoading, errorMessage, currentPage, pagesCount } =
-    useSelector((state) => state.vehicles);
+  const {
+    vehiclesList,
+    isLoading,
+    errorMessage,
+    currentPage,
+    pagesCount,
+    isFiltering,
+    initialLoadDone,
+  } = useSelector((state) => state.vehicles);
 
   const {
     selectedVehicleBrand,
@@ -21,16 +28,13 @@ const CatalogView = () => {
     distanceMax,
   } = useSelector((state) => state.searchOptions);
 
-  // Початкове завантаження даних - тільки якщо список порожній
   useEffect(() => {
-    if (vehiclesList.length === 0) {
+    if (vehiclesList.length === 0 && !initialLoadDone && !isFiltering) {
       dispatch(getVehiclesList({ page: 1, limit: 8 }));
     }
-  }, [dispatch, vehiclesList.length]);
+  }, [dispatch, vehiclesList.length, initialLoadDone, isFiltering]);
 
-  // Функція для завантаження додаткових автомобілів
   const handleLoadMore = () => {
-    // Використовуємо утиліту для побудови параметрів пошуку
     const params = buildSearchParams({
       page: currentPage,
       limit: 8,

@@ -1,14 +1,3 @@
-/**
- * Формує параметри пошуку на основі вибраних фільтрів
- * @param {Object} options - Об'єкт з опціями пошуку
- * @param {number} options.page - Номер сторінки
- * @param {number} options.limit - Кількість елементів на сторінці
- * @param {string} options.selectedVehicleBrand - Вибраний бренд
- * @param {string} options.selectedPriceOption - Вибрана ціна
- * @param {string} options.distanceMin - Мінімальний пробіг
- * @param {string} options.distanceMax - Максимальний пробіг
- * @returns {Object} Параметри пошуку для API
- */
 export const buildSearchParams = ({
   page = 1,
   limit = 8,
@@ -24,8 +13,8 @@ export const buildSearchParams = ({
 
   if (selectedVehicleBrand) params.brand = selectedVehicleBrand;
   if (selectedPriceOption) params.rentalPrice = selectedPriceOption;
-  if (distanceMin) params.minMileage = distanceMin;
-  if (distanceMax) params.maxMileage = distanceMax;
+  if (distanceMin) params.minMileage = parseInt(distanceMin, 10);
+  if (distanceMax) params.maxMileage = parseInt(distanceMax, 10);
 
   return params;
 };

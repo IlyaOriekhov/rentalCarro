@@ -15,7 +15,6 @@ const Dropdown = ({
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
-  // Використовуємо спільний хук замість локального useEffect
   useOutsideClick(dropdownRef, () => setIsOpen(false), []);
 
   const toggleDropdown = () => {
@@ -27,10 +26,8 @@ const Dropdown = ({
     setIsOpen(false);
   };
 
-  // Знаходимо поточний вибраний елемент для відображення
   const selectedOption = options.find((option) => option.value === value);
 
-  // Обчислюємо текст для відображення у dropdown
   const displayText = displayValue
     ? displayValue(value)
     : selectedOption?.label || placeholder;

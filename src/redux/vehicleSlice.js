@@ -32,45 +32,50 @@ const vehicleSlice = createSlice({
     errorMessage: null,
     currentPage: 1,
     pagesCount: 1,
+    isFiltering: false,
   },
   reducers: {
     clearVehiclesList: (state) => {
       state.vehiclesList = [];
       state.currentPage = 1;
+      state.isFiltering = true;
     },
   },
   extraReducers: (builder) => {
     builder
-      // Обробка запиту на отримання списку автомобілів
       .addCase(getVehiclesList.pending, (state) => {
         state.isLoading = true;
         state.errorMessage = null;
       })
+
       .addCase(getVehiclesList.fulfilled, (state, { payload }) => {
         state.isLoading = false;
+        state.isFiltering = false;
+        state.initialLoadDone = true;
 
-        // Фільтруємо дублікати, якщо вони є
-        const newCars = payload.cars.filter(
-          (newCar) =>
-            !state.vehiclesList.some(
-              (existingCar) => existingCar.id === newCar.id
-            )
-        );
+        const cars = payload.cars || [];
 
         if (state.currentPage === 1) {
-          state.vehiclesList = newCars;
+          state.vehiclesList = cars;
         } else {
+          const newCars = cars.filter(
+            (newCar) =>
+              !state.vehiclesList.some(
+                (existingCar) => existingCar.id === newCar.id
+              )
+          );
           state.vehiclesList = [...state.vehiclesList, ...newCars];
         }
 
-        state.pagesCount = payload.totalPages;
-        state.currentPage = state.currentPage + 1;
+        state.pagesCount = payload.totalPages || 0;
+        state.currentPage = payload.page
+          ? Number(payload.page) + 1
+          : state.currentPage + 1;
       })
       .addCase(getVehiclesList.rejected, (state, { payload }) => {
         state.isLoading = false;
         state.errorMessage = payload;
       })
-      // Обробка запиту на отримання інформації про конкретний автомобіль
       .addCase(getVehicleDetails.pending, (state) => {
         state.isLoading = true;
         state.errorMessage = null;

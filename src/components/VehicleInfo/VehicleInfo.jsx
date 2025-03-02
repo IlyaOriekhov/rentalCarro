@@ -7,12 +7,10 @@ import sprite from "../../images/sprite.svg";
 const VehicleInfo = ({ car }) => {
   if (!car) return null;
 
-  // Розділяємо адресу на місто і країну використовуючи утиліту
   const { city, country } = parseAddress(car.address);
 
   return (
     <>
-      {/* Заголовок і основна інформація */}
       <h1 className={styles.carTitle}>
         {car.brand} {car.model}, {car.year}
       </h1>
@@ -36,7 +34,6 @@ const VehicleInfo = ({ car }) => {
       </div>
 
       <div className={styles.carInfo}>
-        {/* Умови оренди */}
         <div className={styles.sectionFirst}>
           <h2 className={styles.sectionTitle}>Rental Conditions:</h2>
           <ul className={styles.conditionsList}>
@@ -80,7 +77,6 @@ const VehicleInfo = ({ car }) => {
           </ul>
         </div>
 
-        {/* Специфікації автомобіля */}
         <div className={styles.section}>
           <h2 className={styles.sectionTitle}>Car Specifications:</h2>
           <ul className={styles.specsList}>
@@ -111,7 +107,6 @@ const VehicleInfo = ({ car }) => {
           </ul>
         </div>
 
-        {/* Аксесуари та функціонал */}
         <div className={styles.section}>
           <h2 className={styles.sectionTitle}>
             Accessories and functionalities:

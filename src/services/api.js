@@ -1,9 +1,7 @@
-// src/services/api.js
 import axios from "axios";
 
 const API_BASE_URL = "https://car-rental-api.goit.global";
 
-// Створюємо екземпляр axios з базовим URL
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
   timeout: 10000,
@@ -12,7 +10,6 @@ const apiClient = axios.create({
   },
 });
 
-// Додаємо інтерцептори для обробки помилок
 apiClient.interceptors.response.use(
   (response) => response,
   (error) => {
@@ -21,7 +18,6 @@ apiClient.interceptors.response.use(
   }
 );
 
-// Отримання списку автомобілів з опціональними параметрами
 export const fetchVehicles = async (options = {}) => {
   try {
     const response = await apiClient.get("/cars", { params: options });
@@ -31,7 +27,6 @@ export const fetchVehicles = async (options = {}) => {
   }
 };
 
-// Отримання інформації про конкретний автомобіль за ID
 export const fetchVehicleById = async (id) => {
   try {
     const response = await apiClient.get(`/cars/${id}`);
@@ -41,7 +36,6 @@ export const fetchVehicleById = async (id) => {
   }
 };
 
-// Отримання списку брендів автомобілів
 export const fetchBrandsList = async () => {
   try {
     const response = await apiClient.get("/brands");

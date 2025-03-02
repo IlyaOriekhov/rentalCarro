@@ -1,11 +1,5 @@
 import { useEffect } from "react";
 
-/**
- * Хук для обробки кліку поза елементом
- * @param {React.RefObject} ref - Реф елемента, поза яким треба відстежувати кліки
- * @param {Function} callback - Функція, яка буде викликана при кліку поза елементом
- * @param {Array} dependencies - Масив залежностей для useEffect
- */
 export const useOutsideClick = (ref, callback, dependencies = []) => {
   useEffect(() => {
     const handleClickOutside = (event) => {

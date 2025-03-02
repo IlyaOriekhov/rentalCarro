@@ -28,7 +28,6 @@ const RentalForm = () => {
   const handleDateChange = (date) => {
     setSelectedDate(date);
 
-    // Використовуємо загальну утиліту для форматування дати
     setFormData({
       ...formData,
       bookingDate: formatDate(date),
@@ -39,14 +38,12 @@ const RentalForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Перевіряємо обов'язкові поля
     if (!formData.name || !formData.email || !selectedDate) {
       toast.error("Please fill in all required fields");
       setIsSubmitting(false);
       return;
     }
 
-    // Імітуємо відправку даних
     setTimeout(() => {
       toast.success("Your booking has been sent successfully!");
       setFormData({
@@ -59,7 +56,6 @@ const RentalForm = () => {
     }, 1000);
   };
 
-  // Кастомний хедер для дейтпікера
   const renderCustomHeader = ({
     date,
     decreaseMonth,

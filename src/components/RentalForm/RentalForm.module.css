@@ -106,7 +106,6 @@
   cursor: not-allowed;
 }
 
-/* Стилі для календаря */
 .customCalendar {
   width: 100%;
   border: none !important;
@@ -156,7 +155,6 @@
   opacity: 0.5;
 }
 
-/* Кастомізація календаря react-datepicker */
 :global .react-datepicker {
   border: none !important;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);

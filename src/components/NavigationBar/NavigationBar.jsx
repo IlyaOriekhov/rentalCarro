@@ -1,4 +1,3 @@
-// src/components/NavigationBar/NavigationBar.jsx
 import { Link, useLocation } from "react-router-dom";
 import styles from "./NavigationBar.module.css";
 import Logo from "../../images/Logo.svg";
@@ -9,8 +8,8 @@ const NavigationBar = () => {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        <Link to="/" className={styles.logo}>
-          <img src={Logo} alt="Logo" className={styles.logoImage} />
+        <Link to="/">
+          <img src={Logo} alt="Logo" />
         </Link>
         <nav className={styles.navigation}>
           <Link

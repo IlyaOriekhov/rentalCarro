@@ -1,4 +1,3 @@
-// src/pages/NotFoundPage/NotFoundView.jsx
 import { Link } from "react-router-dom";
 import styles from "./NotFoundPage.module.css";
 

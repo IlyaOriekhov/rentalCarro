@@ -37,7 +37,7 @@
 
 .mileageContainer {
   display: flex;
-  gap: 0; /* Щоб не було проміжку між полями */
+  gap: 0;
 }
 
 .leftInput {
@@ -69,7 +69,6 @@
   background-color: #0b44cd;
 }
 
-/* Адаптивна верстка */
 @media (max-width: 768px) {
   .filterContainer {
     flex-direction: column;
